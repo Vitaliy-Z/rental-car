@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Header from "../header/Header";
+import HeaderMui from "../header/Header-mui";
 
 const CatalogPage = lazy(() => import("../../pages/CatalogPage"));
 const DetailsPage = lazy(() => import("../../pages/DetailsPage"));
@@ -9,7 +9,7 @@ const HomePage = lazy(() => import("../../pages/HomePage"));
 const App = () => {
   return (
     <>
-      <Header />
+      <HeaderMui />
       <main>
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
