@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import injectHTML from "vite-plugin-html-inject";
 import FullReload from "vite-plugin-full-reload";
 import SortCss from "postcss-sort-media-queries";
-
+import react from "@vitejs/plugin-react-swc";
 export default defineConfig(({ command }) => {
   return {
     define: {
@@ -37,6 +37,7 @@ export default defineConfig(({ command }) => {
       emptyOutDir: true
     },
     plugins: [
+      react(),
       injectHTML(),
       FullReload(["./src/**/**.html"]),
       SortCss({

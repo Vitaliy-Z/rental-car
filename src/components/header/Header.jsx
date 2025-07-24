@@ -1,6 +1,5 @@
 import { AppBar, Toolbar, Box } from "@mui/material";
 import { NavLink, useLocation } from "react-router-dom";
-import logo from "/logo.svg";
 
 import styles from "./Header.styles.js";
 
@@ -15,7 +14,7 @@ const HeaderMui = () => {
       <Toolbar sx={styles.toolbar} disableGutters>
         <NavLink to="/" style={styles.logo}>
           <svg style={styles.logo.svg}>
-            <use href={logo}></use>
+            <use href="/logo.svg"></use>
           </svg>
         </NavLink>
         <Box sx={styles.linksWrapper}>
