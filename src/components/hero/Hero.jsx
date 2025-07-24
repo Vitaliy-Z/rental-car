@@ -5,7 +5,7 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <Container maxWidth="l" sx={styles.container}>
+    <Container maxWidth="lg" sx={styles.container}>
       <Typography variant="h1" sx={styles.title}>
         Find your perfect rental car
       </Typography>

@@ -4,6 +4,7 @@ const styles = {
     height: "700px",
     maxWidth: "1440px",
     margin: "0 auto",
+    marginTop: "4px",
     padding: "60px 120px",
     display: "flex",
     flexDirection: "column",
