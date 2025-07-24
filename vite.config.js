@@ -12,7 +12,7 @@ export default defineConfig(({ command }) => {
     build: {
       sourcemap: true,
       rollupOptions: {
-        input: "./index.html",
+        input: "./src/index.html",
         output: {
           manualChunks(id) {
             if (id.includes("node_modules")) {
