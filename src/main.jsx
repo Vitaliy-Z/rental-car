@@ -16,7 +16,7 @@ const theme = createTheme({
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/rental-car">
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Provider store={store}>

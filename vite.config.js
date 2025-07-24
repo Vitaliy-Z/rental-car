@@ -5,6 +5,7 @@ import SortCss from "postcss-sort-media-queries";
 import react from "@vitejs/plugin-react-swc";
 export default defineConfig(({ command }) => {
   return {
+    base: "/rental-car/",
     define: {
       [command === "serve" ? "global" : "_global"]: {}
     },
