@@ -14,7 +14,7 @@ const HeaderMui = () => {
       <Toolbar sx={styles.toolbar} disableGutters>
         <NavLink to="/" style={styles.logo}>
           <svg style={styles.logo.svg}>
-            <use href="/assets/logo.svg"></use>
+            <use href="/img/logo.svg"></use>
           </svg>
         </NavLink>
         <Box sx={styles.linksWrapper}>
