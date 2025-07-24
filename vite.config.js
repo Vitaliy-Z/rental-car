@@ -43,7 +43,6 @@ export default defineConfig(({ command }) => {
       SortCss({
         sort: "mobile-first"
       })
-    ],
-    base: "/rental-car/"
+    ]
   };
 });
