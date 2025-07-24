@@ -11,13 +11,13 @@ const styles = {
     alignItems: "center",
     justifyContent: "end",
     color: "var(--white)",
-    backgroundImage: "url('/img/hero/hero-bg@1x.webp')",
+    backgroundImage: "url('/assets/img/hero/hero-bg@1x.webp')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
 
     "@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi)": {
-      backgroundImage: "url('/img/hero/hero-bg@2x.webp')"
+      backgroundImage: "url('/assets/img/hero/hero-bg@2x.webp')"
     }
   },
   title: {
