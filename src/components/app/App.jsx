@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import HeaderMui from "../header/Header-mui";
+import HeaderMui from "../header/Header";
 
 const CatalogPage = lazy(() => import("../../pages/CatalogPage"));
 const DetailsPage = lazy(() => import("../../pages/DetailsPage"));

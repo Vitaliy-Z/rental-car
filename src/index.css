@@ -1,5 +1,5 @@
 /* NORMALIZE */
-@import "node_modules/modern-normalize/modern-normalize.css";
+/* @import "node_modules/modern-normalize/modern-normalize.css"; */
 /* FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 
@@ -16,10 +16,6 @@
 }
 
 /* GLOBAL STYLES */
-body {
-  font-family: "Manrope", sans-serif;
-  scroll-behavior: smooth;
-}
 
 *:focus-visible {
   outline: 1px solid var(--button);
