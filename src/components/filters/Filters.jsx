@@ -8,7 +8,7 @@ import {
 } from "../../redux/filters/selectors.js";
 import { clearFilters } from "../../redux/filters/slice.js";
 import { addQueryParams } from "../../utils/addQueryParams.js";
-import FilterByBrand from "./filterByBrand/filterByBrand.jsx";
+import FilterByBrand from "./filterByBrand/FilterByBrand.jsx";
 import FilterByPrice from "./filterByPrice/FilterByPrice.jsx";
 import FilterByMileage from "./filterByMileage/FilterByMileage.jsx";
 import styles from "./Filters.styles.js";
