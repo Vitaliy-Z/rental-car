@@ -16,6 +16,7 @@ import { Alert } from "@mui/material";
 import Loader from "../components/loader/Loader.jsx";
 import Container from "../components/container/Container.jsx";
 import Filters from "../components/filters/Filters.jsx";
+import CarList from "../components/carList/CarList.jsx";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -52,6 +53,7 @@ const CatalogPage = () => {
   return (
     <Container>
       <Filters />
+      <CarList items={cars?.cars} />
     </Container>
   );
 };
