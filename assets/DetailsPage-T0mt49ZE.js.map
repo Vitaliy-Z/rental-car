@@ -1,0 +1,1 @@
+{"version":3,"file":"DetailsPage-T0mt49ZE.js","sources":["../../src/pages/DetailsPage.jsx"],"sourcesContent":["const DetailsPage = () => {\n  return <div>DetailsPage</div>;\n};\nexport default DetailsPage;\n"],"names":["DetailsPage","jsx"],"mappings":"yCAAA,MAAMA,EAAc,IACXC,EAAAA,IAAC,OAAI,SAAA,aAAA,CAAW"}
