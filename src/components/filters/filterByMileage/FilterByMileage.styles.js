@@ -1,6 +1,18 @@
 const styles = {
+  container: {
+    position: "relative",
+    width: "34.65%"
+  },
+  label: {
+    position: "absolute",
+    top: "-9px",
+    left: "15px",
+    zIndex: 99,
+    fontWeight: 400,
+    fontSize: "12px",
+    lineHeight: 1.33
+  },
   formControl: {
-    width: "34.65%",
     display: "flex",
     flexDirection: "row",
     fontSize: "16px",
@@ -11,6 +23,7 @@ const styles = {
     border: "none",
     overflow: "hidden"
   },
+
   textField: {
     padding: "12px 5px 12px 24px",
     alignItems: "baseline",
@@ -19,7 +32,6 @@ const styles = {
   },
   separator: {
     width: "2px",
-    // height: "100%",
     backgroundColor: "var(--gray-light)"
   }
 };

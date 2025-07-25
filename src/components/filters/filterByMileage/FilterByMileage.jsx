@@ -1,4 +1,4 @@
-import { Box, InputAdornment, Input } from "@mui/material";
+import { Box, InputAdornment, Input, Typography } from "@mui/material";
 import styles from "./FilterByMileage.styles.js";
 import { useDispatch, useSelector } from "react-redux";
 import { setCarMileageFilter } from "../../../redux/filters/slice";
@@ -19,25 +19,34 @@ const FilterByMileage = () => {
     dispatch(setCarMileageFilter({ name, value: replacedValue }));
   };
 
+  //  /* Сar mileage / km */
+
   return (
-    <Box sx={styles.formControl}>
-      <Input
-        sx={styles.textField}
-        name="from"
-        startAdornment={<InputAdornment position="start">From</InputAdornment>}
-        onChange={handleChange}
-        value={formatValue(from)}
-        autoComplete="off"
-      />
-      <span style={styles.separator}></span>
-      <Input
-        sx={styles.textField}
-        name="to"
-        startAdornment={<InputAdornment position="start">To</InputAdornment>}
-        onChange={handleChange}
-        value={formatValue(to)}
-        autoComplete="off"
-      />
+    <Box sx={styles.container}>
+      <Typography color="primary" sx={styles.label}>
+        Сar mileage / km
+      </Typography>
+      <Box sx={styles.formControl}>
+        <Input
+          sx={styles.textField}
+          name="from"
+          startAdornment={
+            <InputAdornment position="start">From</InputAdornment>
+          }
+          onChange={handleChange}
+          value={formatValue(from)}
+          autoComplete="off"
+        />
+        <span style={styles.separator}></span>
+        <Input
+          sx={styles.textField}
+          name="to"
+          startAdornment={<InputAdornment position="start">To</InputAdornment>}
+          onChange={handleChange}
+          value={formatValue(to)}
+          autoComplete="off"
+        />
+      </Box>
     </Box>
   );
 };
