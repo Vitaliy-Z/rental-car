@@ -1,4 +1,6 @@
-import React from "react";
+import { useSelector } from "react-redux";
+import { selectCars } from "../../redux/cars/selectors";
+import { getCarInfo } from "../../utils/getCarInfo";
 import {
   Grid,
   Card,
@@ -11,30 +13,31 @@ import {
 } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import Loader from "../loader/Loader.jsx";
 
 import styles from "./CarList.styles.js";
 
-const CarList = ({
-  items = [],
-  favorites = [],
-  onFavoriteToggle,
-  onReadMore
-}) => {
-  const getCarInfo = (car) => {
-    const addressArr = car.address.split(",");
-    const mileage = car.mileage.toLocaleString("en-US").replace(/,/g, " ");
+const CarList = () => {
+  const { cars = [] } = useSelector(selectCars);
 
-    return (
-      <>
-        {`${addressArr[1]} | ${addressArr[2]} | ${car.rentalCompany} |`}
-        <br />
-        {`${car.type} | ${mileage} km`}
-      </>
-    );
+  if (!cars) return <Loader size={60} />;
+
+  const carsWithInfo = cars.map((car) => ({
+    ...car,
+    carInfo: getCarInfo(car)
+  }));
+
+  const onFavoriteToggle = (id) => {
+    console.log("onFavoriteToggle", id);
   };
+
+  const onReadMore = (id) => {
+    console.log("onReadMore", id);
+  };
+
   return (
     <Grid container rowSpacing={6} columnSpacing={4}>
-      {items.map((car) => (
+      {carsWithInfo.map((car) => (
         <Card key={car.id} sx={styles.card}>
           <Box sx={styles.imgWrapper}>
             <CardMedia
@@ -62,7 +65,12 @@ const CarList = ({
               <Typography variant="subtitle1">${car.rentalPrice}</Typography>
             </Box>
 
-            <Typography sx={styles.carInfoText}>{getCarInfo(car)}</Typography>
+            <Typography sx={styles.carInfoText}>
+              {car.carInfo.city} | {car.carInfo.country} | {car.carInfo.company}
+              |
+              <br />
+              {car.carInfo.type} | {car.carInfo.mileage} km
+            </Typography>
 
             <Button
               fullWidth

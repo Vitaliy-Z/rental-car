@@ -19,8 +19,6 @@ const FilterByMileage = () => {
     dispatch(setCarMileageFilter({ name, value: replacedValue }));
   };
 
-  //  /* Сar mileage / km */
-
   return (
     <Box sx={styles.container}>
       <Typography color="primary" sx={styles.label}>

@@ -3,11 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { fetchCars } from "../redux/cars/operations";
 import { fetchBrands } from "../redux/brands/operations.js";
-import {
-  selectCars,
-  selectIsLoading,
-  selectError
-} from "../redux/cars/selectors";
+import { selectIsLoading, selectError } from "../redux/cars/selectors";
 import {
   selectIsBrandsLoading,
   selectBrandsError
@@ -21,8 +17,6 @@ import CarList from "../components/carList/CarList.jsx";
 const CatalogPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const cars = useSelector(selectCars);
 
   const isCarsLoading = useSelector(selectIsLoading);
   const isBrandsLoading = useSelector(selectIsBrandsLoading);
@@ -53,7 +47,7 @@ const CatalogPage = () => {
   return (
     <Container>
       <Filters />
-      <CarList items={cars?.cars} />
+      <CarList />
     </Container>
   );
 };
