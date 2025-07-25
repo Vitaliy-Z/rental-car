@@ -29,13 +29,20 @@ const styles = {
     color: "var(--badges)"
   },
   cardContent: {
-    padding: 0
+    padding: "0px",
+    height: "33%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+
+    "&:last-child": {
+      paddingBottom: "0px"
+    }
   },
   carInfoTitle: {
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center",
-    marginBottom: "8px",
+    alignItems: "flex-start",
     fontWeight: 500,
     fontSize: "16px",
     lineHeight: 1.25,
@@ -43,8 +50,14 @@ const styles = {
       color: "var(--button)"
     }
   },
+  carInfoTextWrapper: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    gap: "8px"
+  },
   carInfoText: {
-    marginBottom: "28px",
+    marginBottom: "auto",
     fontWeight: 400,
     fontSize: "12px",
     lineHeight: 1.33,
@@ -52,6 +65,19 @@ const styles = {
   },
   readMoreButton: {
     width: "100%"
+  },
+  loadMoreButton: {
+    display: "flex",
+    margin: "0 auto",
+    marginTop: "80px",
+    width: "156px"
+  },
+  loaderWrapper: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: "80px",
+    height: "40px"
   }
 };
 export default styles;

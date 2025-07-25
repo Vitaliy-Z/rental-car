@@ -19,6 +19,15 @@ const styles = {
       background: "var(--button-hover)",
       boxShadow: "none"
     }
+  },
+  outlined: {
+    background: "none",
+    color: "var(--main)",
+    borderColor: "var(--button)",
+    "&:hover": {
+      background: "none",
+      borderColor: "var(--button-hover)"
+    }
   }
 };
 export default styles;
