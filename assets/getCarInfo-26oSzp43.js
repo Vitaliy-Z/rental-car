@@ -1,0 +1,2 @@
+import{j as a,a7 as s}from"./vendor-D9sbH_qW.js";const r={container:{maxWidth:"1440px",margin:"0 auto",padding:"84px 120px 124px 120px"}},i=({children:t})=>a.jsx(s,{maxWidth:"1440px",sx:r.container,disableGutters:!0,children:t}),p=t=>{const e=t?.address?.split(","),n=t?.mileage?.toLocaleString("en-US").replace(/,/g," ");return{city:e[1],country:e[2],company:t.rentalCompany,type:t.type,mileage:n}};export{i as C,p as g};
+//# sourceMappingURL=getCarInfo-26oSzp43.js.map
