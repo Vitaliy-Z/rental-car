@@ -6,14 +6,14 @@ import { fetchCarDetails } from "./operations";
 const carDetailsSlice = createSlice({
   name: "carDetails",
   initialState: {
-    items: {},
+    item: {},
     isLoading: false,
     error: null
   },
   extraReducers: (builder) => {
     builder.addCase(fetchCarDetails.pending, handlePending);
     builder.addCase(fetchCarDetails.fulfilled, (state, { payload }) => {
-      state.items = payload;
+      state.item = payload;
       state.isLoading = false;
     });
     builder.addCase(fetchCarDetails.rejected, handleError);

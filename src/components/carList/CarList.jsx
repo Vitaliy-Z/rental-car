@@ -1,10 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCars, selectIsLoadingMore } from "../../redux/cars/selectors";
-
+import { selectFavoritesCars } from "../../redux/favorites/selectors.js";
 import { fetchMoreCars } from "../../redux/cars/operations.js";
 import { getCarInfo } from "../../utils/getCarInfo";
-
 import {
   Grid,
   Card,
@@ -19,13 +19,15 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import Loader from "../loader/Loader.jsx";
 import Button from "../button/Button.jsx";
 import styles from "./CarList.styles.js";
+import { addFavorite, removeFavorite } from "../../redux/favorites/slice.js";
 
 const CarList = () => {
   const [pageLimit, setPageLimit] = useState(1);
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const carsObjectRedux = useSelector(selectCars);
   const isLoadingMore = useSelector(selectIsLoadingMore);
+  const favoritesCars = useSelector(selectFavoritesCars);
 
   if (!carsObjectRedux) return <Loader size={60} />;
 
@@ -37,11 +39,13 @@ const CarList = () => {
   }));
 
   const onFavoriteToggle = (id) => {
-    console.log("onFavoriteToggle", id);
+    favoritesCars.includes(id)
+      ? dispatch(removeFavorite(id))
+      : dispatch(addFavorite(id));
   };
 
   const onReadMore = (id) => {
-    console.log("onReadMore", id);
+    navigate(`/catalog/${id}`);
   };
 
   const onLoadMore = () => {
@@ -67,8 +71,11 @@ const CarList = () => {
                 onClick={() => onFavoriteToggle(car.id)}
                 sx={styles.favoriteButton}
               >
-                {/* <FavoriteIcon sx={styles.favoriteFillIcon} /> */}
-                <FavoriteBorderIcon sx={styles.favoriteBorderIcon} />
+                {favoritesCars.includes(car.id) ? (
+                  <FavoriteIcon sx={styles.favoriteFillIcon} />
+                ) : (
+                  <FavoriteBorderIcon sx={styles.favoriteBorderIcon} />
+                )}
               </IconButton>
             </Box>
 
