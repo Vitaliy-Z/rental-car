@@ -51,14 +51,7 @@ const styles = {
     color: "var(--gray)"
   },
   readMoreButton: {
-    borderRadius: "12px",
-    textTransform: "none",
-    fontWeight: 600,
-    fontSize: "16px",
-    background: "var(--button)",
-    "&:hover": {
-      background: "var(--button-hover)"
-    }
+    width: "100%"
   }
 };
 export default styles;

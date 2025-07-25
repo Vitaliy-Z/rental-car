@@ -36,18 +36,7 @@ const styles = {
   },
   button: {
     width: "276px",
-    height: "44px",
-    fontSize: "16px",
-    fontWeight: "600",
-    lineHeight: "1.25",
-    color: "var(--white)",
-    backgroundColor: "var(--button)",
-    borderRadius: "12px",
-    border: "none",
-    textTransform: "capitalize",
-    "&:hover": {
-      backgroundColor: "var(--button-hover)"
-    }
+    height: "44px"
   }
 };
 

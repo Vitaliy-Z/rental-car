@@ -7,14 +7,13 @@ import {
   CardMedia,
   CardContent,
   Typography,
-  Button,
   IconButton,
   Box
 } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Loader from "../loader/Loader.jsx";
-
+import Button from "../button/Button.jsx";
 import styles from "./CarList.styles.js";
 
 const CarList = () => {
@@ -73,9 +72,7 @@ const CarList = () => {
             </Typography>
 
             <Button
-              fullWidth
-              variant="contained"
-              sx={styles.readMoreButton}
+              style={styles.readMoreButton}
               onClick={() => onReadMore(car.id)}
             >
               Read more

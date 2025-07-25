@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
+import Button from "../button/Button.jsx";
 import { fetchCars } from "../../redux/cars/operations.js";
 import {
   selectCarBrandFilter,
@@ -29,7 +30,7 @@ const Filters = () => {
       <FilterByBrand />
       <FilterByPrice />
       <FilterByMileage />
-      <Button variant="contained" sx={styles.button} onClick={handleSearch}>
+      <Button style={styles.button} onClick={handleSearch}>
         Search
       </Button>
     </Box>

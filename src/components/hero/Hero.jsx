@@ -1,5 +1,6 @@
-import { Container, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { Container, Typography } from "@mui/material";
+import Button from "../button/Button.jsx";
 import styles from "./Hero.styles.js";
 const Hero = () => {
   const navigate = useNavigate();
@@ -12,11 +13,7 @@ const Hero = () => {
       <Typography variant="p" sx={styles.description}>
         Reliable and budget-friendly rentals for any journey
       </Typography>
-      <Button
-        variant="contained"
-        sx={styles.button}
-        onClick={() => navigate("/catalog")}
-      >
+      <Button style={styles.button} onClick={() => navigate("/catalog")}>
         View Catalog
       </Button>
     </Container>
