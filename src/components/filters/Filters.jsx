@@ -14,7 +14,7 @@ import FilterByPrice from "./filterByPrice/FilterByPrice.jsx";
 import FilterByMileage from "./filterByMileage/FilterByMileage.jsx";
 import styles from "./Filters.styles.js";
 
-const Filters = () => {
+const Filters = ({ setQueryParamsOfFilters }) => {
   const dispatch = useDispatch();
 
   const carBrand = useSelector(selectCarBrandFilter);
@@ -22,7 +22,9 @@ const Filters = () => {
   const carMileage = useSelector(selectCarMileageFilter);
 
   const handleSearch = () => {
-    dispatch(fetchCars(addQueryParams(carBrand, carPrice, carMileage)));
+    const queryParams = addQueryParams(carBrand, carPrice, carMileage);
+    dispatch(fetchCars(queryParams));
+    setQueryParamsOfFilters(queryParams);
     dispatch(clearFilters());
   };
   return (

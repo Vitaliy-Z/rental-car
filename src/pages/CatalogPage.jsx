@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { fetchCars } from "../redux/cars/operations";
@@ -15,6 +15,8 @@ import Filters from "../components/filters/Filters.jsx";
 import CarList from "../components/carList/CarList.jsx";
 
 const CatalogPage = () => {
+  const [queryParamsOfFilters, setQueryParamsOfFilters] = useState({});
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -46,8 +48,8 @@ const CatalogPage = () => {
   }
   return (
     <Container>
-      <Filters />
-      <CarList />
+      <Filters setQueryParamsOfFilters={setQueryParamsOfFilters} />
+      <CarList queryParamsOfFilters={queryParamsOfFilters} />
     </Container>
   );
 };

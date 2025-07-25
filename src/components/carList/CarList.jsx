@@ -21,8 +21,9 @@ import Button from "../button/Button.jsx";
 import styles from "./CarList.styles.js";
 import { addFavorite, removeFavorite } from "../../redux/favorites/slice.js";
 
-const CarList = () => {
+const CarList = ({ queryParamsOfFilters }) => {
   const [pageLimit, setPageLimit] = useState(1);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const carsObjectRedux = useSelector(selectCars);
@@ -49,7 +50,7 @@ const CarList = () => {
   };
 
   const onLoadMore = () => {
-    dispatch(fetchMoreCars({ page: pageLimit + 1 }));
+    dispatch(fetchMoreCars({ page: pageLimit + 1, ...queryParamsOfFilters }));
     setPageLimit(pageLimit + 1);
   };
 
