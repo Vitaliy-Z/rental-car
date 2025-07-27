@@ -2,7 +2,7 @@ import * as Yup from "yup";
 
 export const bookingSchema = Yup.object().shape({
   name: Yup.string()
-    .max(16, "Name must be at most 16 characters")
+    .min(3, "Name must be at least 3 characters")
     .required("Name is required"),
   email: Yup.string()
     .email("Invalid email format")

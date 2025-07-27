@@ -1,10 +1,9 @@
 import { useState } from "react";
+import clsx from "clsx";
 import { NavLink, useLocation } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
-import logo from "/logo.svg";
 import styles from "./Header.module.css";
-import clsx from "clsx";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,9 +20,13 @@ const Header = () => {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <NavLink to="/" className={styles.logo}>
-          <svg>
-            <use href={logo}></use>
-          </svg>
+          <picture>
+            <source
+              srcSet="/logo/logo@2x.webp"
+              media="(min-resolution: 192dpi)"
+            />
+            <img src="/logo/logo@1x.webp" alt="logo" />
+          </picture>
         </NavLink>
 
         {!isMobileMenuOpen && (
