@@ -4,7 +4,7 @@ import Header from "../header/Header";
 
 const CatalogPage = lazy(() => import("../../pages/CatalogPage"));
 const DetailsPage = lazy(() => import("../../pages/DetailsPage"));
-const HomePage = lazy(() => import("../../pages/HomePage"));
+const HomePage = lazy(() => import("../../pages/homePage/HomePage"));
 
 const App = () => {
   return (
