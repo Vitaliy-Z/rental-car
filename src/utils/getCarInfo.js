@@ -1,6 +1,10 @@
+export const formatMileage = (mileage) => {
+  return mileage.toLocaleString("en-US").replace(/,/g, " ");
+};
+
 export const getCarInfo = (car) => {
   const addressArr = car?.address?.split(", ");
-  const mileage = car?.mileage?.toLocaleString("en-US").replace(/,/g, " ");
+  const mileage = formatMileage(car?.mileage);
   return {
     city: addressArr[1],
     country: addressArr[2],

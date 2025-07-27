@@ -8,6 +8,10 @@ import styles from "./CarsList.module.css";
 
 const CatalogList = ({ cars, totalCars, onLoadMore }) => {
   const isLoading = useSelector(selectIsLoadingMore);
+
+  if (cars.length === 0) {
+    return <p>No cars found</p>;
+  }
   return (
     <div className={styles.wrapper}>
       <ul className={styles.list}>
