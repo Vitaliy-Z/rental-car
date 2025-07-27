@@ -1,9 +1,13 @@
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
+import { selectIsLoadingMore } from "../../redux/cars/selectors.js";
 import CarCard from "./carCard/CarCard.jsx";
 import Button from "../button/Button.jsx";
+import Loader from "../loader/Loader.jsx";
 import styles from "./CarsList.module.css";
 
 const CatalogList = ({ cars, totalCars, onLoadMore }) => {
+  const isLoading = useSelector(selectIsLoadingMore);
   return (
     <div className={styles.wrapper}>
       <ul className={styles.list}>
@@ -15,7 +19,11 @@ const CatalogList = ({ cars, totalCars, onLoadMore }) => {
       </ul>
       {cars.length < totalCars && (
         <Button className={styles.button} onClick={onLoadMore}>
-          Load more
+          {isLoading ? (
+            <Loader size={20} className={styles.loader} />
+          ) : (
+            "Load more"
+          )}
         </Button>
       )}
     </div>

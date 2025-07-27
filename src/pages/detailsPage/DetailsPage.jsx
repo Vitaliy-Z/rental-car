@@ -10,14 +10,16 @@ import {
 import Container from "../../components/container/Container.jsx";
 import BookingForm from "../../components/bookingForm/BookingForm.jsx";
 import CarInfo from "../../components/carInfo/CarInfo.jsx";
+import Loader from "../../components/loader/Loader.jsx";
 import styles from "./DetailsPage.module.css";
 
 const DetailsPage = () => {
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
+
   const { carId } = useParams();
 
   const car = useSelector(selectCarDetails);
-  const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
   const handleSubmit = (values) => {
@@ -28,30 +30,24 @@ const DetailsPage = () => {
     dispatch(fetchCarDetails(carId));
   }, [dispatch, carId]);
 
-  if (isLoading || !car.id) {
-    return <p>Loading...</p>;
-  }
-  if (error) {
-    return <p>Error: {error.message}</p>;
-  }
-  if (!car.id) {
-    return <Navigate to="/catalog" />;
-  }
-
   return (
     <Container>
-      <div className={styles.wrapper}>
-        <div className={styles.imageAndFormWrapper}>
-          <img
-            className={styles.image}
-            src={car.img}
-            alt={`Photo of ${car.brand} ${car.model}`}
-            loading="lazy"
-          />
-          <BookingForm onSubmit={handleSubmit} />
+      {isLoading && <Loader />}
+      {error && <p>Error: {error.message}</p>}
+      {!isLoading && !error && (
+        <div className={styles.wrapper}>
+          <div className={styles.imageAndFormWrapper}>
+            <img
+              className={styles.image}
+              src={car.img}
+              alt={`Photo of ${car.brand} ${car.model}`}
+              loading="lazy"
+            />
+            <BookingForm onSubmit={handleSubmit} />
+          </div>
+          <CarInfo car={car} />
         </div>
-        <CarInfo car={car} />
-      </div>
+      )}
     </Container>
   );
 };

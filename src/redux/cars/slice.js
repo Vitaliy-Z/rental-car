@@ -10,7 +10,12 @@ import { fetchCars, fetchMoreCars } from "./operations";
 const carsSlice = createSlice({
   name: "cars",
   initialState: {
-    items: [],
+    items: {
+      cars: [],
+      totalCars: 0,
+      page: 1,
+      totalPages: 1
+    },
     isLoading: false,
     isLoadingMore: false,
     error: null

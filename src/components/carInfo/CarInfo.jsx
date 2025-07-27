@@ -2,8 +2,13 @@ import PropTypes from "prop-types";
 import { Icon } from "../icon/Icon.jsx";
 import styles from "./CarInfo.module.css";
 import { getCarInfo } from "../../utils/getCarInfo.js";
+import Loader from "../loader/Loader.jsx";
 
 const CarInfo = ({ car }) => {
+  if (!car.id) {
+    return <Loader />;
+  }
+
   const {
     id,
     brand,
