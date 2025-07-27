@@ -11,9 +11,6 @@
   border-radius: 19px;
 }
 @media screen and (min-width: 768px) {
-  .title {
-    width: 40%;
-  }
   .image {
     height: 412px;
   }
@@ -21,10 +18,12 @@
 @media screen and (min-width: 1440px) {
   .wrapper {
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    row-gap: 30px;
-    column-gap: 42px;
+    justify-content: center;
+    gap: 72px;
+  }
+  .imageAndFormWrapper {
+    width: 100%;
+    max-width: 640px;
   }
   .image {
     height: 512px;

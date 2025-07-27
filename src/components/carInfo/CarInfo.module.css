@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.title {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+
+  & span {
+    margin-left: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: var(--gray);
+  }
+}
+.location {
+  margin-bottom: 16px;
+
+  & span {
+    margin-left: 16px;
+  }
+}
+.price {
+  margin-bottom: 32px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: var(--button);
+}
+.listTitle {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    gap: 68px;
+  }
+}
