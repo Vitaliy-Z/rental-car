@@ -9,6 +9,7 @@ import {
   selectIsLoading,
   selectError
 } from "../../redux/carDetails/selectors.js";
+import BookingForm from "../../components/bookingForm/BookingForm.jsx";
 
 // accessories: (3)[
 //   ("Leather seats", "Panoramic sunroof", "Premium audio system")
@@ -41,7 +42,9 @@ const DetailsPage = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
-  console.log("🚀 ~ car:", car);
+  const handleSubmit = (values) => {
+    console.log(values); // Send request to backend
+  };
 
   useEffect(() => {
     dispatch(fetchCarDetails(carId));
@@ -59,9 +62,19 @@ const DetailsPage = () => {
 
   return (
     <Container>
-      <h1 className={styles.title}>
-        {car.brand} {car.model}
-      </h1>
+      <div className={styles.wrapper}>
+        <div className={styles.imageAndFormWrapper}>
+          <img
+            src={car.img}
+            alt={`Photo of ${car.brand} ${car.model}`}
+            className={styles.image}
+          />
+          <BookingForm onSubmit={handleSubmit} />
+        </div>
+        <h1 className={styles.title}>
+          {car.brand} {car.model}
+        </h1>
+      </div>
     </Container>
   );
 };

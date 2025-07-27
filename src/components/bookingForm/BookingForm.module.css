@@ -1,0 +1,58 @@
+.wrapper {
+  padding: 16px;
+  border: 1px solid var(--gray-light);
+  border-radius: 10px;
+}
+.title {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+}
+.text {
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.25;
+  color: var(--gray);
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.field {
+  position: relative;
+}
+.input {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 14px;
+  line-height: 1.25;
+  color: var(--gray);
+  background-color: var(--inputs);
+  border: none;
+  outline: none;
+  border-radius: 14px;
+}
+.dateRange {
+  transform: translateX(-10px);
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    padding: 32px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .text {
+    font-size: 16px;
+  }
+  .input {
+    font-size: 16px;
+  }
+  .dateRange {
+    transform: none;
+  }
+}
