@@ -55,4 +55,8 @@
   .dateRange {
     transform: none;
   }
+  .button {
+    width: 156px;
+    margin: 0 auto;
+  }
 }

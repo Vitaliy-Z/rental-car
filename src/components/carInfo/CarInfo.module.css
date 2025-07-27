@@ -47,6 +47,9 @@
   align-items: center;
   gap: 8px;
 }
+.listItemText {
+  text-transform: capitalize;
+}
 
 @media screen and (min-width: 1440px) {
   .container {

@@ -104,7 +104,9 @@ const BookingForm = ({ onSubmit }) => {
               className={styles.input}
             />
 
-            <Button type="submit">Send</Button>
+            <Button className={styles.button} type="submit">
+              Send
+            </Button>
           </Form>
         )}
       </Formik>

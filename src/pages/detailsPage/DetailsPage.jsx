@@ -43,9 +43,10 @@ const DetailsPage = () => {
       <div className={styles.wrapper}>
         <div className={styles.imageAndFormWrapper}>
           <img
+            className={styles.image}
             src={car.img}
             alt={`Photo of ${car.brand} ${car.model}`}
-            className={styles.image}
+            loading="lazy"
           />
           <BookingForm onSubmit={handleSubmit} />
         </div>
