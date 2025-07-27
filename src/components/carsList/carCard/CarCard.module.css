@@ -1,7 +1,8 @@
 .card {
+  height: 424px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  justify-content: space-between;
 }
 .infoWrapper {
   display: flex;
