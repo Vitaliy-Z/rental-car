@@ -1,10 +1,14 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Header from "../header/Header";
+import Header from "../header/Header.jsx";
 
-const CatalogPage = lazy(() => import("../../pages/CatalogPage"));
-const DetailsPage = lazy(() => import("../../pages/DetailsPage"));
-const HomePage = lazy(() => import("../../pages/homePage/HomePage"));
+const CatalogPage = lazy(() =>
+  import("../../pages/catalogPage/CatalogPage.jsx")
+);
+const DetailsPage = lazy(() =>
+  import("../../pages/detailsPage/DetailsPage.jsx")
+);
+const HomePage = lazy(() => import("../../pages/homePage/HomePage.jsx"));
 
 const App = () => {
   return (
@@ -15,7 +19,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/catalog" element={<CatalogPage />} />
-            <Route path="/details" element={<DetailsPage />} />
+            <Route path="/catalog/:carId" element={<DetailsPage />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Suspense>

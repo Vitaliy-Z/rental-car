@@ -1,9 +1,10 @@
 .header {
-  padding: 26px;
+  padding: 26px 0;
   background-color: var(--badges);
 }
 .nav {
   max-width: 1440px;
+  padding: 0 16px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -70,8 +71,8 @@
 }
 
 @media screen and (min-width: 768px) {
-  .header {
-    padding: 26px 120px;
+  .nav {
+    padding: 0 32px;
   }
   .linksWrapper {
     display: flex;
@@ -80,5 +81,10 @@
   .burgerButton,
   .closeButton {
     display: none;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .nav {
+    padding: 0 120px;
   }
 }
