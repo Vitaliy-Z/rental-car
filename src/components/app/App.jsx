@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "../header/Header.jsx";
+import Loader from "../loader/Loader.jsx";
 
 const CatalogPage = lazy(() =>
   import("../../pages/catalogPage/CatalogPage.jsx")
@@ -15,7 +16,7 @@ const App = () => {
     <>
       <Header />
       <main>
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/catalog" element={<CatalogPage />} />
